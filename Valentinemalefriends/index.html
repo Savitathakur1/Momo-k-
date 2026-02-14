@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Kings Valentine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4b5c, #ff758c);
+    color: white;
+    height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    padding: 25px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    background: white;
+    color: #ff4b5c;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4b5c;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 6s infinite ease-in;
+    opacity: 0.8;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -9px;
+    left: 0;
+}
+
+.heart:after {
+    left: -9px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        bottom: -10%;
+        opacity: 1;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 13px;
+    opacity: 0.8;
+}
+/* ============================= */
+/* 📱 Mobile Responsive Only */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+        height: 100dvh;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 9px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Page 1 -->
+<div id="page1">
+    <h1>🚨 Breaking News 🚨</h1>
+    <p>Love is in the air this Valentine’s Day 💘✨</p>
+
+    <button id="btn1" onclick="nextButton(1)">You Should See This 👀</button>
+    <button id="btn2" class="hidden" onclick="nextButton(2)">Something Interesting 😏</button>
+    <button id="btn3" class="hidden" onclick="nextButton(3)">Are You Ready King? 👑</button>
+    <button id="btn4" class="hidden" onclick="nextPage(2)">Let’s Go ❤️</button>
+</div>
+
+<!-- Page 2 -->
+<!-- Page 2 FUNNY RANDOM -->
+<div id="page2" class="hidden">
+    <h1>Sun Lo King 👑💘</h1>
+    <p id="funnyMessage">
+        Aaj Valentine’s Day hai... 😌<br>
+        Aur tum officially smile karne wale ho 😂
+    </p>
+
+    <button onclick="generateFunnyMessage()">Try Saying No 😏</button>
+    <br>
+    <button onclick="nextPage(3)">Theek Hai, Aage Chalte Hain 😌</button>
+</div>
+
+
+<!-- Page 3 -->
+<div id="page3" class="hidden">
+    <h1>Relax My King 👑❤️</h1>
+    <p>
+        Don’t worry… this isn’t a proposal 😌<br><br>
+     It’s just a little Valentine surprise<br>
+for someone who makes the world a little better just by being himself 👑💘
+
+    </p>
+    <button onclick="nextPage(4)">One More Thing ❤️</button>
+</div>
+
+<!-- Page 4 -->
+<div id="page4" class="hidden">
+    <h1>From Anjana ❤️</h1>
+    <p>
+        Happy Valentine’s Day, my King 👑❤️<br><br>
+        You may be single today…<br>
+        but your heart deserves something truly special ✨<br><br>
+        Never lower your standards.<br>
+        Stay confident.<br>
+        Stay royal 👑
+    </p>
+    <button onclick="nextPage(5)">There’s Something I Want To Say 💫</button>
+</div>
+
+<!-- Page 5 -->
+<div id="page5" class="hidden">
+    <h1>Just For You 👑❤️</h1>
+    <p>
+        One day, on Valentine’s Day 💘<br>
+        someone will look at you<br>
+        and feel incredibly lucky to call you theirs ✨<br><br>
+        And honestly…<br>
+        they’ll have to be really special<br>
+        to deserve a King like you 👑😉<br><br>
+        Until then,<br>
+        keep shining the way you do ❤️
+    </p>
+</div>
+
+</div>
+
+<div class="footer">
+    Made with ❤️ by Anjana
+</div>
+
+<script>
+
+function nextButton(step) {
+    if (step === 1) {
+        btn1.classList.add("hidden");
+        btn2.classList.remove("hidden");
+    } else if (step === 2) {
+        btn2.classList.add("hidden");
+        btn3.classList.remove("hidden");
+    } else if (step === 3) {
+        btn3.classList.add("hidden");
+        btn4.classList.remove("hidden");
+    }
+}
+
+function nextPage(pageNumber) {
+    for (let i = 1; i <= 5; i++) {
+        let page = document.getElementById("page" + i);
+        if (page) page.classList.add("hidden");
+    }
+    document.getElementById("page" + pageNumber).classList.remove("hidden");
+}
+
+/* ============================= */
+/* 😏 Random Funny HinEnglish Messages */
+/* ============================= */
+
+const funnyMessages = [
+    "No option available King 😌 System ne allow nahi kiya.",
+    "Error 404: 'No' word delete ho chuka hai 😂",
+    "Tum mana karne ki koshish kar rahe ho? Cute ho 😏",
+    "Destiny ne already YES kar diya hai 👑💘",
+    "Valentine’s Day pe attitude allowed nahi hai 😌",
+    "King ho… par yahan decision mera chalega 😂🔥"
+];
+
+function generateFunnyMessage() {
+    const randomIndex = Math.floor(Math.random() * funnyMessages.length);
+    document.getElementById("funnyMessage").innerText = funnyMessages[randomIndex];
+}
+
+/* ============================= */
+/* ❤️ Floating Hearts Animation */
+/* ============================= */
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
